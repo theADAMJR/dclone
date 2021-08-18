@@ -11,7 +11,7 @@ const TextBasedChannel: React.FunctionComponent = () => {
     <div>
       <div id="messages">
         {/* text channel header */}
-        {messages.map(m => <Message key={m.id} message={m.content}></Message>)}
+        {messages.map(m => <Message key={m.id} message={m}></Message>)}
       </div>
     </div>
   );
