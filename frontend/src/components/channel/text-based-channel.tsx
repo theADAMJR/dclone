@@ -13,6 +13,7 @@ const TextBasedChannel: React.FunctionComponent = () => {
         {/* text channel header */}
         {messages.map(m => <Message key={m.id} message={m}></Message>)}
       </div>
+      <textarea></textarea>
     </div>
   );
 }
