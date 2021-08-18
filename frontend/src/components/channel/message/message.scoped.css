@@ -1,0 +1,11 @@
+.message:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.message:hover .timestamp {
+  opacity: 1;
+}
+
+.timestamp {
+  opacity: 0;
+}
