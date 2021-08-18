@@ -4,6 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 export interface MessageBoxProps { }
 
 const MessageBox: React.FunctionComponent<MessageBoxProps> = () => {
+  const [channel, setChannel] = useState({ name: 'general' });
   const [content, setContent] = useState('');
 
   const onKeyDown = (event: React.KeyboardEvent) => {
@@ -14,14 +15,19 @@ const MessageBox: React.FunctionComponent<MessageBoxProps> = () => {
       || event.shiftKey
       || !content.trim()) return;
 
-    alert(content);
+    setContent('');
   }
 
   return (
-    <div>
+    <div className="px-4">
       <TextareaAutosize
         onChange={e => setContent(e.target.value)}
-        onKeyDown={onKeyDown} />
+        onKeyDown={onKeyDown}
+        value={content}
+        rows={1}
+        placeholder={`Message #${channel.name}`}
+        className="resize-none normal appearance-none rounded-lg leading-tight focus:outline-none w-full inset-x-5 max-h-96 py-3 px-4" />
+      <div className="text-sm w-full h-6"></div>
     </div>
   );
 }
