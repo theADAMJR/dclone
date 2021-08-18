@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-export interface MessageBoxProps { }
+export interface MessageBoxProps {
+  onCreate: (content: string) => any;
+}
 
-const MessageBox: React.FunctionComponent<MessageBoxProps> = () => {
+const MessageBox: React.FunctionComponent<MessageBoxProps> = (props) => {
   const [channel, setChannel] = useState({ name: 'general' });
   const [content, setContent] = useState('');
 
@@ -16,6 +18,7 @@ const MessageBox: React.FunctionComponent<MessageBoxProps> = () => {
       || !content.trim()) return;
 
     setContent('');
+    props.onCreate(content);
   }
 
   return (

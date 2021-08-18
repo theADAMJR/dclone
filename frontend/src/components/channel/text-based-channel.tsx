@@ -8,6 +8,12 @@ const TextBasedChannel: React.FunctionComponent = () => {
     { id: '2', content: 'hi again' },
   ]);
 
+  const onCreate = (content: string) => {
+    setMessages(messages.concat(
+      { id: (messages.length + 1).toString(), content },
+    ));
+  }
+
   return (
     <div className="h-full flex flex-col flex-grow">
       <div
@@ -16,7 +22,7 @@ const TextBasedChannel: React.FunctionComponent = () => {
         {/* text channel header */}
         {messages.map(m => <Message key={m.id} message={m}></Message>)}
       </div>
-      <MessageBox />
+      <MessageBox onCreate={onCreate} />
     </div>
   );
 }
