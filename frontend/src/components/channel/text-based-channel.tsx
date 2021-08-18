@@ -4,13 +4,17 @@ import Message from './message/message';
 
 const TextBasedChannel: React.FunctionComponent = () => {
   const [messages, setMessages] = useState([
-    { id: '1', content: 'hi' },
-    { id: '2', content: 'hi again' },
+    { id: '1', content: 'hi', createdAt: new Date() },
+    { id: '2', content: 'hi again', createdAt: new Date() },
   ]);
 
   const onCreate = (content: string) => {
     setMessages(messages.concat(
-      { id: (messages.length + 1).toString(), content },
+      {
+        id: (messages.length + 1).toString(),
+        content,
+        createdAt: new Date(),
+      },
     ));
   }
 
