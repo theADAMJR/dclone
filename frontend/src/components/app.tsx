@@ -1,13 +1,11 @@
-export interface AppProps {
-  
-}
- 
-const App: React.SFC<AppProps> = () => {
+import TextBasedChannel from './channel/text-based-channel';
+
+const App: React.FunctionComponent = () => {
   return (
-    <div className="bg-indigo-900">
-      <h1>Hello Earth</h1>
+    <div>
+      <TextBasedChannel />
     </div>
   );
 }
- 
+
 export default App;
