@@ -2,7 +2,7 @@ import TextBasedChannel from './channel/text-based-channel';
 
 const App: React.FunctionComponent = () => {
   return (
-    <div>
+    <div className="h-screen">
       <TextBasedChannel />
     </div>
   );
